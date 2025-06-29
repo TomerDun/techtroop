@@ -1,0 +1,11 @@
+.container {
+    padding: 5px;    
+}
+a {
+    padding: 4px;
+    background-color: rgb(233, 165, 71);
+    border-style: solid;
+    border-radius: 4px;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestion Box</title>
+</head>
+
+<body>
+    <h1>Funding Request</h1>
+    <h3>Please send us your idea and we will get back to you with an offer within 2-4 business days.</h3>
+
+    <form action="">
+        <fieldset id='contact'>
+            <legend>Contact Information</legend>
+
+            <label for="name">Name: </label>
+            <input type="text" name='name' id='name' placeholder="Name">
+            <br>
+
+
+            <label for="phone">Phone Number: </label>
+            <input type="tel" name="phone" id='phone' placeholder="0501234567">
+            <br>
+
+
+            <label for="email">Email: </label>
+            <input type="email" name="email" id='email' placeholder="you@email.com">
+            <br>
+
+
+        </fieldset>
+
+        <fieldset id='idea'>
+            <legend>Your idea</legend>
+
+            <label for="type">Invention Type: </label>
+            <select name="type" id="type">
+                <option value="">Select Type</option>
+                <option value="software">Software</option>
+                <option value="robot">Robot</option>
+                <option value="business">Business</option>
+                <option value="other">Other</option>
+            </select> 
+            <br>
+            
+            <label for="description">Desribe you idea:</label> <br>
+            <textarea name="description" id="description" placeholder="description"></textarea>
+            <br>
+
+            <label for="funding">Funding Required?</label>
+            <br>
+
+            <input type="radio" name="funding" id="funding-yes" value="yes">
+            <label for="funding-yes">Yes</label>
+            <br>
+            <input type="radio" name="funding" id="funding-no" value="no">
+            <label for="funding-no">No</label>
+        </fieldset>
+
+        <br>
+
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

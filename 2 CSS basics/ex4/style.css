@@ -1,0 +1,31 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#container {
+    background-color: lightgray;
+}
+.box {
+    border: 1px solid black;
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+}
+.box#first {
+    background-color: teal;    
+}
+.box#second {
+    background-color: orange;    
+}
+input {
+    border-style: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.button {
+    background-color: rgb(51, 236, 134);
+    border-color: rgb(51, 179, 109);
+    border-style: solid;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}

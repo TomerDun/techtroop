@@ -1,0 +1,13 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+img {
+    width: 340px;
+    display: inline-block;}
+
+body {
+    background-color: rgb(78, 155, 78);
+    color: rgb(250, 192, 0)
+}

@@ -1,0 +1,17 @@
+.red {
+    color: red;
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.green {
+    color: green;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.blue {
+    color: blue;
+    font-size: x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif
+}
