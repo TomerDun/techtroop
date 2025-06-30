@@ -1,0 +1,14 @@
+.container {
+    border: 1px solid purple;
+    width: 40%;
+    height: 50px;
+    font-size: 0;
+}
+.box {
+    background-color: #ffb6c1;
+    width: calc(100% / 3);
+    height: 50px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: inline-block;
+}

@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+.big {
+    background-color: #ffb6c1;
+    width: calc(100% - 20px);
+    height: 20px;
+    display: inline-block;
+    margin: 0;    
+}
+
+.small {
+    background-color: #f08080;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    display: inline-block;
+    
+}
