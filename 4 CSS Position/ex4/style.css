@@ -1,0 +1,41 @@
+.container {    
+    background-color: #d63031;
+    height: 300px;
+    width: 450px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.top {
+    background-color: white;
+    position: absolute;    
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+}
+.mid-white {
+    background-color: white;
+    width: 70%;
+    height: 80%;    
+    margin: 0 auto;
+    position: relative;
+    border-radius: 0 0 5px 5px
+}
+
+.gray {
+    background-color: silver;    
+    width: 15%;
+    height: 25%;
+    position: absolute;
+    top: 0;
+}
+
+.left {
+    left: 0;    
+    border-radius: 5px 5px 0 0;
+}
+.right {
+    border-radius: 5px 5px 0 0;
+    right: 0;
+}

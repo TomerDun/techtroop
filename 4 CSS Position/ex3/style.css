@@ -1,0 +1,32 @@
+.container {
+    background-color: #6c5ce7;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    border-radius: 5px;
+}
+
+span {
+    position: absolute;
+}
+
+.text-top {
+    top: 5px;
+    left: 5px;
+}
+
+.text-bot {
+    bottom: 5px;
+    right: 5px;
+}
+
+.box {
+    width: 25px;
+    height: 50%;
+    background-color: lightgray;
+    position: relative;
+    display: inline-block;
+    top: 50px;   
+    left: 5px; 
+    margin-right: 20px;
+}
