@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ex3.css">
+    <title>Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="#">
+
+            <div class="header">
+                <h1>Contact Form</h1>
+                <h4>Get in touch with us</h4>
+            </div>
+
+            <div class="row">
+                <div class="input-field">
+                    <label for="first-name">First Name</label>
+                    <input type="text" placeholder="First Name" name="first-name" id="first-name">
+                </div>
+
+                <div class="input-field">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" placeholder="Last Name" name="last-name" id="last-name">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="you@example.com" name="email" id="email">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field">
+                    <label for="subject">Subject</label>
+                    <select name="subject" id="subject">
+                        <option disabled selected="">Select Subject</option>
+                        <option value="Complaint">Complaint</option>
+                        <option value="Compliment">Compliment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="input-field">
+                    <label for="priority">Priority</label>
+                    <select name="priority" id="priority">
+                        <option selected value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="extra medium">Extra Medium</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" placeholder="Tell us how we can help..."></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id='pref-field' class="input-filed">
+                    <h4>Contact Preferences</h4>
+                    <input type="checkbox" name="pref" id="pref-email" value="Email Updates">
+                    <label for="pref-email">Email updates</label>
+                    <input type="checkbox" name="pref" id="pref-phone" value="Phone Follow-up">
+                    <label for="pref-phone">Phone Follow-up</label>
+                    <input type="checkbox" name="pref" id="pref-newsletter" value="Newsletter">
+                    <label for="pref-newsletter">Newsletter</label>
+                </div>
+            </div>
+
+            <div class="row finish-row">
+                <button class="draft">Save draft</button>
+                <button class="send">Send Message</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
