@@ -185,6 +185,8 @@ body {
     color: #2c3e50;
     margin-bottom: 0.25rem;
     margin-top: 0;
+    font-weight: 900;
+    font-size: large;
 }
 
 .task-info p {
