@@ -384,3 +384,13 @@ body {
     font-size: 0.9rem;
     bottom: 0;
 }
+
+/* New CSS */
+
+.left-column {
+    flex: 2
+}
+
+.right-column {
+    flex: 1;
+}
