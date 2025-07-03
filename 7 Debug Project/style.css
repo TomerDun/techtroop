@@ -75,7 +75,8 @@ body {
 .header-bar {
     background: white;
     padding: 1rem 2rem;
-    margin: -2rem -2rem 2rem -2rem;
+    margin: -2rem -2rem 2rem -2rem; 
+    /* TODO: Check ^^ */
     border-bottom: 1px solid #e9ecef;
     display: flex;
     justify-content: space-between;
@@ -89,6 +90,8 @@ body {
 }
 
 .user-info {
+    display: flex;
+    align-items: center;
     gap: 1rem;
 }
 
