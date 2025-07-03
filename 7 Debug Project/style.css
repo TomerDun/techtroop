@@ -166,11 +166,12 @@ body {
 
 .task-list {
     list-style: none;
+    padding: 0;
 }
 
 .task-item {
     display: flex;
-    padding: 1rem;
+    /* padding: 1rem; */
     border-bottom: 1px solid #e9ecef;
     justify-content: space-between;
     align-items: center;
