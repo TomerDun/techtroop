@@ -149,13 +149,15 @@ body {
 }
 
 .widget-header {
-    padding: 2.5rem;
+    padding: 1rem;
+    padding-bottom: 0;        
     border-bottom: 1px solid #e9ecef;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem;    
 }
 
 .widget-title {
     font-size: 1.2rem;
+    font-weight: 800;
     color: #2c3e50;
     margin: 0 0 1rem 0;
 }
@@ -184,7 +186,6 @@ body {
 .task-info h4 {
     color: #2c3e50;
     margin-bottom: 0.25rem;
-    margin-top: 0;
     font-weight: 900;
     font-size: large;
 }
@@ -192,6 +193,7 @@ body {
 .task-info p {
     color: #7f8c8d;
     font-size: 0.9rem;
+    margin-top: 0;
 }
 
 .task-status {
