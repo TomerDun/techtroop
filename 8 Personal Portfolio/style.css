@@ -157,6 +157,7 @@ section.projects {
 section.contact {
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
 }
 section.contact label {
     text-align: start;
@@ -179,4 +180,28 @@ section.contact button {
     border-radius: 10px;
     font-weight: 700;
     font-size: large;
+}
+
+section.contact span {
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+.buttons-row {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin: auto;
+}
+
+.link-button {
+    padding: 1rem;
+    background-color: var(--ui-main);
+    border-radius: 50%;    
+    color: var(--text-light);
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
