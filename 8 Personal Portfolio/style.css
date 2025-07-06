@@ -31,6 +31,7 @@ body {
 /* General Styling */
 section {
     padding: 1rem;
+    text-align: center;
 }
 
 
@@ -61,7 +62,6 @@ main p {
 
 /* Hero Section */
 section.hero {
-    text-align: center;
     background-color: var(--bg-dark);
 }
 
@@ -75,8 +75,7 @@ section.hero button {
 
 /* About Section */
 section.about {
-    background-color: var(--bg-light);
-    text-align: center;
+    background-color: var(--bg-light);    
 }
 
 .skill-row {
