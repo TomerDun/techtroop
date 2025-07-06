@@ -1,0 +1,19 @@
+html {
+    /* Color Pallete Variables */
+
+    /* Background colors */
+    --bg-light: white;
+    --bg-mid: #f7fafc;
+    --bg-dark: #f5f8fa;
+
+    /* Font Colors */
+    --text-main: #e5e8ec;
+    --text-header: #1e293b;
+    --text-accent: #2463eb;
+    --text-light: white;
+
+    /* UI Colors */
+    --ui-main: #2a67ec;
+    --ui-sec: #f59e0b;
+
+}
