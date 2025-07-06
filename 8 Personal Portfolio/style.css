@@ -5,6 +5,7 @@ html {
     --bg-light: white;
     --bg-mid: #f7fafc;
     --bg-dark: #f2f5f9;
+    --bg-xdark: #1e293b;
 
     /* Font Colors */
     --text-main: #66768c;
@@ -204,4 +205,13 @@ section.contact span {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+footer {
+    background-color: var(--bg-xdark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-light);
+    padding: 2rem 0;
 }
