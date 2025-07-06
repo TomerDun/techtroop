@@ -64,6 +64,8 @@ main p {
 /* Hero Section */
 section.hero {
     background-color: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
 }
 
 section.hero button {
@@ -214,4 +216,8 @@ footer {
     align-items: center;
     color: var(--text-light);
     padding: 2rem 0;
+}
+
+@media (min-height: 600px) {
+    
 }
