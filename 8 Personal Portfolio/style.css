@@ -110,3 +110,41 @@ section.about {
 #pb-python {width: 90%;}
 #pb-sql {width: 60%;}
 #pb-aws {width: 50%;}
+
+/* Projects Section */
+
+section.projects {
+    background-color: var(--bg-mid);
+}
+
+.project-container {
+    border-radius: 15px;
+    text-align: start;
+    margin-bottom: 2rem;
+    border-radius: 0 0 10px 10px;
+}
+
+.project-img-container {
+    border-radius: 15px 15px 0 0;
+    background-color: darkgray;
+}
+
+.project-info-container {
+    background-color: var(--bg-light);
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+
+}
+
+.project-info-container > h3 {
+    margin-top: 0;
+}
+
+.project-button {
+    border: 0;
+    padding: 1rem;
+    background-color: var(--ui-sec);
+    color: white;
+    width: 100%;
+    border-radius: 10px;
+}
