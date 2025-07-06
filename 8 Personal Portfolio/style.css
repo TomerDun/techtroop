@@ -71,6 +71,8 @@ section.hero button {
     border: 0;
     padding: 1rem;
     border-radius: 10px;
+    font-weight: 500;
+    margin-bottom: 1rem;
 }
 
 /* About Section */
@@ -152,3 +154,29 @@ section.projects {
 }
 
 /* Contact Section */
+section.contact {
+    display: flex;
+    flex-direction: column;
+}
+section.contact label {
+    text-align: start;
+    padding: 5px 0;
+    color: var(--text-header);
+    font-weight: 700;
+}
+section.contact input, textarea {
+    padding: 5px;
+    border: 2px solid silver;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+section.contact button {
+    border: 0;
+    background-color: var(--ui-main);
+    color: var(--text-light);
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: large;
+}
