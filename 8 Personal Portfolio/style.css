@@ -17,3 +17,23 @@ html {
     --ui-sec: #f59e0b;
 
 }
+
+* {
+    box-sizing: border-box;    
+}
+
+body {
+      font-family: "Inter", sans-serif;
+}
+
+header {
+    display: flex;
+    background-color: var(--bg-light);
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;   
+}
+
+header > h1 {
+    color: var(--text-accent);
+}
