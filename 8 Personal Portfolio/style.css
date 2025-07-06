@@ -67,3 +67,10 @@ section.hero button {
     padding: 1rem;
     border-radius: 10px;
 }
+
+/* About Section */
+section.about {
+    background-color: var(--bg-light);
+    text-align: center;
+    padding: 1rem;
+}
