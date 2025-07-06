@@ -238,6 +238,7 @@ body {
 
 .quick-actions {
     display: flex;
+    justify-content: space-between;
 }
 
 .action-btn {
