@@ -218,6 +218,12 @@ footer {
     padding: 2rem 0;
 }
 
-@media (min-height: 600px) {
-    
+@media (min-width: 600px) {
+    section.hero {
+        flex-direction: row;
+    }
+    section.hero > .info-container {
+        text-align: start;
+        width: 60%;
+    }
 }
