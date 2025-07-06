@@ -15,6 +15,7 @@ html {
     /* UI Colors */
     --ui-main: #2a67ec;
     --ui-sec: #f59e0b;
+    --ui-overlay: #e2e8f0;
 
 }
 
@@ -74,3 +75,36 @@ section.about {
     text-align: center;
     padding: 1rem;
 }
+
+.skill-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+}
+
+.progress-bar {
+    position: relative;
+    width: 8rem;
+    background-color: var(--ui-overlay);
+    border-radius: 15px;
+    height:12px;
+}
+
+.progress-bar-fill {
+    position: absolute;
+    /* width: 50%; */
+    height: 100%;
+    background-color: var(--ui-main);
+    border-radius: 15px 0 0 15px;
+}
+
+/* Progress bar fill % */
+#pb-js {width: 85%;}
+#pb-node {width: 50%;}
+#pb-react {width: 80%;}
+#pb-react-native {width: 60%;}
+#pb-python {width: 90%;}
+#pb-sql {width: 60%;}
+#pb-aws {width: 50%;}
