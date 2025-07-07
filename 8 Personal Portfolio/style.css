@@ -157,13 +157,12 @@ section.projects {
 }
 
 /* Contact Section */
-/* section.contact {
+section.contact > .contact-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-} */
+}
 
-section.contact > form {
+section.contact form {
     display: flex;
     flex-direction: column;
 }
@@ -280,7 +279,19 @@ footer {
     }
 
     /* Contact */
-    section.contact {
-        display: flex;
+    section.contact > .contact-container {
+        flex-direction: row;
+        gap: 4rem
+    }
+    .contact-info-container {
+        width: 30%;
+        text-align: start;
+    }
+    .contact-container > form {
+        flex: 1;
+    }
+    .contact-container > form button {
+        width: fit-content;
+        padding: 1rem 2rem;
     }
 }
