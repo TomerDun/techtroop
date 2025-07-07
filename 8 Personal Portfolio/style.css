@@ -286,6 +286,14 @@ section.contact span {
     align-items: center;
 }
 
+.link-button:hover {
+    background-color: var(--ui-main-hover);
+}
+
+.link-button img {
+    width: 100%;
+}
+
 footer {
     background-color: var(--bg-xdark);
     display: flex;
