@@ -173,12 +173,20 @@ section.projects {
 }
 
 .project-button {
+    display: inline-block;
+    text-align: center;
+    text-decoration-line: none;
+    cursor: pointer;
     border: 0;
     padding: 1rem;
     background-color: var(--ui-sec);
     color: white;
     width: 100%;
     border-radius: 10px;
+}
+
+.project-button:hover {
+    background-color: var(--ui-sec-hover);
 }
 
 /* Contact Section */
