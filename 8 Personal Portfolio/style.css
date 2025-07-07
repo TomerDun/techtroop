@@ -70,6 +70,14 @@ nav > a:hover {
     background-color: var(--bg-mid);
 }
 
+.nav-hamburger {
+    width: 1.5rem;
+}
+
+.nav-hamburger > img {
+    width: 100%;
+}
+
 /* Main */
 
 main h1, h2, h3 {
@@ -296,6 +304,10 @@ footer {
     /* Header */
     nav {
         display: flex;
+    }
+
+    .nav-hamburger {
+        display: none;
     }
 
     /* Hero */
