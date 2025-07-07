@@ -219,11 +219,21 @@ footer {
 }
 
 @media (min-width: 600px) {
+    section {
+        padding: 4rem;
+    }
+
     section.hero {
         flex-direction: row;
     }
     section.hero > .info-container {
         text-align: start;
         width: 60%;
+    }
+    section.hero .img-section-container {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
