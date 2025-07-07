@@ -223,6 +223,8 @@ footer {
         padding: 4rem;
     }
 
+    /* Hero */
+
     section.hero {
         flex-direction: row;
     }
@@ -235,5 +237,25 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    /* About */
+    section.about {
+        display: flex;
+    }
+    section.about .info-container {
+        width: 60%;
+        text-align: start;
+    }
+    section.about .skills-container {
+        flex: 1;                        
+    }
+    .skills-list {
+        width: 100%;
+    }
+    .skill-row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
     }
 }
