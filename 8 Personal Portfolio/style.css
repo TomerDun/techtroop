@@ -258,4 +258,14 @@ footer {
         display: flex;
         justify-content: space-between;
     }
+
+    /* Projects */
+    .projects-container {
+        display: flex;        
+        width: 100%;
+        justify-content: space-between;
+    }
+    .project-container {
+        max-width: 45%;
+    }
 }
