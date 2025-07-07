@@ -257,9 +257,10 @@ section.contact button:hover {
     background-color: var(--ui-main-hover);
 }
 
-section.contact span {
+.contact-info-container > a {
     color: var(--text-main);
     margin-bottom: 1rem;
+    text-decoration-line: none;
 }
 
 .contact-info-container {
