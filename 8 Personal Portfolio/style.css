@@ -29,7 +29,6 @@ html {
 
 body {      
       margin: 0;
-      scroll-behavior: smooth;
 }
 
 /* General Styling */
@@ -169,6 +168,7 @@ section.projects {
     border-radius: 15px;
     text-align: start;
     margin-bottom: 2rem;
+    /* width: 30%; */
     border-radius: 10px 10px 10px 10px;    
     box-shadow: 1px 5px 13px -2px rgba(0,0,0,0.73);
 
@@ -176,7 +176,11 @@ section.projects {
 
 .project-img-container {
     border-radius: 10px 10px 0 0;
-    background-color: darkgray;
+}
+
+.project-img-container img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
 }
 
 .project-info-container {
@@ -334,7 +338,8 @@ footer {
     /* Projects */
     .projects-container {
         display: flex;        
-        width: 100%;
+        width: 70%;
+        margin: auto;
         justify-content: space-between;
     }
     .project-container {
