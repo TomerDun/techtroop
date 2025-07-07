@@ -365,6 +365,9 @@ footer {
     .project-container {
         max-width: 45%;
     }
+    .project-button {
+        width: fit-content;
+    }
 
     /* Contact */
     section.contact > .contact-container {
