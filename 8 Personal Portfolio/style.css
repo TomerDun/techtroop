@@ -3,7 +3,7 @@ html {
 
     /* Background colors */
     --bg-light: white;
-    --bg-mid: #f7fafc;
+    --bg-mid: rgb(247, 250, 252);
     --bg-dark: #f2f5f9;
     --bg-xdark: #1e293b;
 
@@ -51,6 +51,24 @@ header {
 
 header > h2 {
     color: var(--text-accent);
+}
+
+nav {
+    display: flex;
+    display: none;
+}
+
+nav > a {
+    padding: 1rem 2rem;
+    color: var(--text-main);
+    font-size: small;
+    text-decoration-line: none;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+}
+
+nav > a:hover {
+    background-color: var(--bg-mid);
 }
 
 /* Main */
@@ -266,8 +284,14 @@ footer {
 }
 
 @media (min-width: 600px) {
+
     section {
         padding: 4rem;
+    }
+
+    /* Header */
+    nav {
+        display: flex;
     }
 
     /* Hero */
