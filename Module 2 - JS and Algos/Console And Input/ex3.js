@@ -15,20 +15,22 @@ rl.question('Name: ', name => {
             p['Age'] = age;
             rl.question('Favorite Color: ', color => {
                 p['Favorite Color'] = color;
-                // Print out
-                console.log('Registration summary:');
-                
-                for (key in p) {
-                    console.log(`${key}: ${p[key]}`);                    
-                }
                 
                 rl.close()
+                // Print out
+                console.log('Registration summary:');
+
+                for (key in p) {
+                    console.log(`${key}: ${p[key]}`);
+                }
+
             })
         })
         // rl.close()
     })
+    // rl.close()  
 })
-// rl.close()  
+
 
 
 
