@@ -16,7 +16,8 @@ class uniqueArray {
     }
 
     exists(item) {
-        return item in this.itemsHistory;
+        const itemCopy = (typeof item === 'object') ? JSON.stringify(item) : item
+        return itemCopy in this.itemsHistory;
     }
 
     get(index) {
