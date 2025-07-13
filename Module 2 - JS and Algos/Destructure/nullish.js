@@ -7,6 +7,5 @@ let employeesArr = [
   ]
 
 for (emp of employeesArr) {
-    emp.age ?? console.log(emp.name);
-    emp.id ?? console.log(emp.name);    
+    (emp.age && emp.id) ?? console.log(emp.name);
 }
