@@ -24,11 +24,3 @@ console.log('---ROOT IS 5--');
 let nodeWithTwoChildren = new BSNode();
 numbers.forEach(n => nodeWithTwoChildren.insertNode(n));
 console.log(nodeWithTwoChildren.removeNode(nodeWithTwoChildren, 8)); // will return tree like the second image (the root will be 5) 
-
-
-
-
-    
-// let nodeWithTwoChildren = new BSNode();
-// numbers.forEach(n => nodeWithTwoChildren.insertNode(n));
-// console.log(nodeWithTwoChildren.removeNode(nodeWithTwoChildren, 8)); // will return tree like the second image (the root will be 5) 

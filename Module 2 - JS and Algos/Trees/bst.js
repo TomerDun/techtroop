@@ -51,7 +51,7 @@ export default class BSNode {
 
     removeNode(parent, val) {
         // Find Node        
-
+        
         // Recursive case
         if (val > this.value) return this.rightChild.removeNode(this, val);
         else if (val < this.value) return this.leftChild.removeNode(this, val);
@@ -60,20 +60,38 @@ export default class BSNode {
         console.log(`this: ${this.value}; parent: ${parent.value}`);
 
         const isLeft = this.value < parent.value; // help for readability
+        const isParent = (parent.value === val); // value is same as the original root
 
         // No children
         if (!this.leftChild && !this.rightChild) {
+            if (isParent) {
+                parent = null;
+                return parent;
+            }
+
             isLeft ? parent.leftChild = null : parent.rightChild = null;
             return this;
         }
         // One child
-        if (!this.leftChild || !this.rightChild) {
+        if (!this.leftChild || !this.rightChild) {            
             let childToAdd = this.leftChild || this.rightChild;
+
+            if (isParent) {
+                parent = childToAdd;
+                return parent;
+            }
+
             isLeft ? parent.leftChild = childToAdd : parent.rightChild = childToAdd;
             return this;
         }
         else { // Two children
             let childToAdd = this.leftChild.findMax();
+
+            if (isParent) {
+                childToAdd.rightChild = parent.rightChild;
+                parent = childToAdd;
+                return parent;
+            }
             isLeft ? parent.leftChild = childToAdd : parent.rightChild = childToAdd;
         }
         return this
