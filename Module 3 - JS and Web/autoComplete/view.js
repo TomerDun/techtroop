@@ -1,4 +1,4 @@
-import { handleAdd } from "./controller";
+import { handleAdd } from "./controller.js";
 
 const addWordButton = document.querySelector('#add-word');
 const newWordInput = document.querySelector('#new-word-input')

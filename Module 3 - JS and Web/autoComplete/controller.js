@@ -1,4 +1,4 @@
-import AutoCompleteTrie from "./autoCompleteTrie"
+import AutoCompleteTrie from "./autoCompleteTrie.js"
 
 
 function validateWord(word) {    
