@@ -11,11 +11,12 @@ function validateWord(word) {
 
 const dict = new AutoCompleteTrie();
 
+// TODO: Check if word already exists
 export function handleAdd(word) {
     try {
         validateWord(word)        
     } catch (err) {
-        return err
+        return err.message
     }
     dict.addWord(word);
     return true;
