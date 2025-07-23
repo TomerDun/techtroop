@@ -21,3 +21,13 @@ export function handleAdd(word) {
     dict.addWord(word);
     return true;
 }
+
+export function handleSuggest(word) {
+    try {
+        validateWord(word)
+        return dict.predictWords(word);
+    } catch {
+        return false;
+    }
+    
+}
