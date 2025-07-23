@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul id="list">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>            
+        </ul>
+
+        <input type="text" id="item-name" placeholder="item name">
+        <button id="add">Add</button>
+    </div>
+</body>
+
+
+<script>
+    const addButton = document.querySelector('#add');
+    const nameInput = document.querySelector('#item-name');
+    const itemsList = document.querySelector('#list')
+
+    addButton.addEventListener('click', () => {
+        const newItemHtml = `<lii>${nameInput.value}</li>`;
+        itemsList.innerHTML += newItemHtml;
+        nameInput.value = null;
+    })
+</script>
+
+<style>
+    div {
+        width: 20%;
+        margin: auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    ul {
+        border: 2px solid brown;
+        border-radius: 5px;
+    }
+
+</style>
+</html>

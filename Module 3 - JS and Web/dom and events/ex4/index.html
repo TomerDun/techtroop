@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="onSubmit()" id="form" action="#">
+        <label for="name">Name</label>
+        <input id="name" type="text">
+
+        <label for="salary">Salary</label>
+        <input id="salary" type="text">        
+
+        <label for="bday">Birthday</label>
+        <input id="bday" type="text">
+
+        <label for="phone">Phone</label>
+        <input id="phone" type="text">
+
+        <button id="submit">submit</button>
+
+        <span id="msg"></span>
+    </form>
+</body>
+
+<script>
+    function validate() {
+        const form = document.querySelector('#form');
+        const nameInput = document.querySelector('#name');
+        const salaryInput = document.querySelector('#salary');
+        const dateInput = document.querySelector('#bday');
+        const phoneInput = document.querySelector('#phone');
+
+        if (nameInput.value.length < 3) return 'Name must be longer then 2 character';
+        
+        const salary = parseInt(salaryInput.value);
+        if (salary < 10000 || salary > 16000) return 'Salary must be between 10k-16k'
+
+        if (!dateInput.value) return 'Please enter a birthDay date'        
+        if (phoneInput.value.length !== 10) return 'Phone length must be 10';
+
+        return 'Submitted';
+    }
+
+    function onSubmit() {
+        console.log('submit');
+        
+        const errorMessage = validate();
+        const newSpan = document.createElement('span');
+        newSpan.id = 'msg'
+        newSpan.innerHTML = errorMessage;
+        newSpan.style.color = errorMessage === 'Submitted' ? 'green' : 'red'
+        const msg = document.querySelector('#msg')
+        if (msg) msg.remove();
+        form.appendChild(newSpan);
+    }
+</script>
+</html>

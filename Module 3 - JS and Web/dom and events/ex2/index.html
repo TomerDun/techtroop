@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="res-name" type="text">
+    <button id='check' >Check</button>
+    <h1 id="output">Init</h1>
+</body>
+
+<script>
+    const reservations = {
+        Bob: { claimed: false },
+        Ted: { claimed: true }
+    }
+
+    function checkRes(name) {
+        if (name in reservations) {
+            if (reservations[name].claimed) return 'Welcome, ' + name;
+            else return 'This reservation is already claimed'
+        }
+        else return 'There is no reservation under that name';
+    }
+
+    const output = document.querySelector('#output');
+    const input = document.querySelector('#res-name')
+
+    document.querySelector('#check').addEventListener('click', () => {
+        const text = checkRes(input.value);
+        output.innerHTML = text;
+    })
+
+</script>
+
+</html>

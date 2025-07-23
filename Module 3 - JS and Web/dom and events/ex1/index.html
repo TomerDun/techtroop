@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div style="left: 150px; top: 150px;" id="ball"></div>
+    </div>
+</body>
+
+<script>
+    function manipulatePixels(value, amount) {
+        let numberValue = parseInt(value);
+        numberValue += amount;               
+        return numberValue + 'px';
+    }
+
+    const ballDiv = document.querySelector('#ball');
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') ballDiv.style.left = manipulatePixels(ballDiv.style.left, 15);
+        else if (e.key === 'ArrowLeft') ballDiv.style.left = manipulatePixels(ballDiv.style.left, -15);
+        else if (e.key === 'ArrowUp') ballDiv.style.top = manipulatePixels(ballDiv.style.top, -15);
+        else if (e.key === 'ArrowDown') ballDiv.style.top = manipulatePixels(ballDiv.style.top, 15);
+
+    })
+</script>
+
+
+<style>
+    .container {
+        width: 100%;
+        height: 100vh;
+        margin: auto;
+        position: relative;
+    }
+
+    #ball {
+        position: absolute;
+        width: 100px;
+        height: 100px;    
+        background-color: brown;
+        border-radius: 50%;
+    }
+</style>
+
+</html>
