@@ -5,6 +5,10 @@ let wordsCounter = 0;
 const addWordButton = document.querySelector('#add-word');
 const newWordInput = document.querySelector('#new-word-input');
 const wordSuggestInput = document.querySelector('#word-suggest');
+const suggestionsList = document.querySelector('#suggestions-list');
+
+console.log(wordSuggestInput);
+
 
 
 // Event listeners
@@ -21,13 +25,15 @@ addWordButton.addEventListener('click', e => {
     updateCounter();
 })
 
-wordSuggestInput.addEventListener('mouseover ', e => {  
-    console.log('change');
-      
+wordSuggestInput.addEventListener('input', (e) => {    
     const word = e.target.value;
-    const suggestions = handleSuggest(word);
-    displaySuggestions(suggestions);
-    
+    if (word) {
+        const suggestions = handleSuggest(word);
+        displaySuggestions(suggestions);
+    }
+    else {
+        suggestionsList.style.display = 'none';
+    }
 })
 
 
@@ -63,11 +69,22 @@ function displayWordError(err) {
 }
 
 function displaySuggestions(words) {
-    console.log(words);        
+    if (words.length) {
+        refreshSuggestionsList(words);
+        suggestionsList.style.display = 'block';
+    }
+    else {
+        
+    }
 }
 
 function refreshSuggestionsList(suggestions) {
-    
+    suggestionsList.innerHTML = '';
+    for (const word of suggestions) {
+        const li = document.createElement('li');
+        li.textContent = word;
+        suggestionsList.appendChild(li);
+    }
 }
 
 function updateCounter() {

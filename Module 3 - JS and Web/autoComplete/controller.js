@@ -6,6 +6,7 @@ function validateWord(word) {
     if(!/^[a-zA-Z]+$/.test(word)){
         throw new Error("Invalid Word")
     }
+    if (dict.findWord(word)) throw new Error('Word already exists in dictionary')
     return true;    
 }
 
