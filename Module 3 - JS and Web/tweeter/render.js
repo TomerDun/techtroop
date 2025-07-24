@@ -1,3 +1,4 @@
+import { handleDeletePost } from "./main.js";
 import Tweeter from "./model.js";
 
 export class Renderer {
@@ -23,8 +24,13 @@ export class Renderer {
             const postDeleteButton = document.createElement('button');
             postDeleteButton.className = 'post-delete-button';
             postDeleteButton.setAttribute('data-id', post.id);
-            postDeleteButton.innerText = 'Delete';
+            postDeleteButton.innerText = 'Delete'; 
+
+            postDeleteButton.addEventListener('click', (e) => {
+                handleDeletePost(post.id);
+            })
             postDiv.appendChild(postDeleteButton);
+            
             
             // comments
             const commentsContaier = document.createElement('div');
