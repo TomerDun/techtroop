@@ -1,4 +1,4 @@
-let posts = [
+const dummyPosts = [
     {
         text: "First post!",
         id: "p1",
@@ -19,47 +19,83 @@ let posts = [
     }
 ]
 
-let postIdCounter = 2;
-let commentIdCounter = 6;
-
-function getNewPostId() {
-    return 'p' + postIdCounter
-}
-
-function getNewCommentId() {
-    return 'c' + commentIdCounter;
-}
-
-export function getPosts() {
-    return posts;
-}
-
-export function addPost(text) {
-    const newPost = {
-        text,
-        id : getNewPostId(),
-        comments: [],
+export default class Tweeter {
+    constructor() {
+        this.posts = dummyPosts;
+        this.postIdCounter = 2;
+        this.commentIdCounter = 6;
     }
-}
 
-export function removePost(id) {
-    posts = posts.filter(p => p.id !== id);    
-}
+    _getNewPostId() {
+        return 'p' + (this.postIdCounter + 1);
+    }
 
-export function addComment(postId, text) {
-    const newComment = {id: getNewCommentId(), text};
-    for (let i in posts) {
-        if (posts[i].id === postId) {
-            posts[i].comments.push(newComment);
-            return i;
+    _getNewCommentId() {
+        return 'c' + (this.commentIdCounter + 1);
+    }
+
+    getPosts() {
+        return this.posts;
+    }
+
+    addPost(text) {
+        const newPost = {
+            text,
+            id: this._getNewPostId(),
+            comments: [],
+        }
+
+        this.posts.push(newPost);
+    }
+
+    removePost(id) {
+        this.posts = this.posts.filter(p => p.id !== id);
+    }
+
+    addComment(postId, text) {
+        const newComment = { id: this._getNewCommentId(), text };
+        for (let i in this.posts) {
+            if (this.posts[i].id === postId) {
+                this.posts[i].comments.push(newComment);
+                return;
+            }
+        }
+    }
+
+    removeComment(postId, commentId) {
+        for (let i in this.posts) {
+            if (this.posts[i].id === postId) {
+                this.posts[i].comments = this.posts[i].comments.filter(c => c.id !== commentId);
+            }
         }
     }
 }
 
-export function removeComment(postId, commentId) {
-    for (let i in posts) {
-        if (posts[i].id === postId) {
-            posts[i].comments = posts[i].comments.filter(c => c.id !== commentId);
-        }
-    }
-}
+// Testing
+const tweeter = new Tweeter();
+
+// Test adding a post
+tweeter.addPost("This is my own post!");
+console.log(tweeter.getPosts());
+// Should add: {text: "This is my own post!", id: "p3", comments: []}
+
+// Test removing a post
+tweeter.removePost("p1");
+
+console.log('---------------');
+console.log(tweeter.getPosts());
+// Should only have two posts left
+
+// Test adding comments
+tweeter.addComment("p3", "Damn straight it is!");
+tweeter.addComment("p2", "Second the best!");
+console.log('---------------');
+console.log(tweeter.getPosts());
+
+// Test removing comments
+tweeter.removeComment("p2", "c6");
+console.log('---------------');
+console.log(tweeter.getPosts());
+
+
+
