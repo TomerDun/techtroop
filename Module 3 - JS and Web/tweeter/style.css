@@ -1,3 +1,74 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
 }
+
+.outside-container {
+    width: 50%;
+    margin: auto;
+}
+
+/* General */
+input {
+    padding: 4px;
+    margin-right: 1rem;
+}
+
+button {
+    border: none;
+    background-color: #ff9771a9;
+    border: 1px solid #bd542f;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff9671;    
+}
+
+/* new post */
+
+.tweet-row {
+    display: flex;
+}
+
+/* Posts */
+
+#posts-container {
+    margin-top: 2rem;
+}
+
+.post-content {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.post-container {
+    padding: 1rem;
+    border: solid 2px silver;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+
+/* Comments */
+
+.comments-container {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.comment-row {
+    display: flex;
+    align-items: center;
+    pad: 1rem;
+    border-bottom: 2px solid silver;    
+    margin-bottom: 2px;
+}
+
+.comment-delete-button {
+    margin-right: 1rem;    
+}
+
