@@ -13,12 +13,20 @@
             <button id="add-word">Add Word</button>
         </div>
 
-        <div class="row complete-row">
-            <input id='word-suggest' type="text" placeholder="Enter a word to complete">
+        <div id="info-row">
+            
+        </div>
+
+        <div id='suggest-row' class="row">
+            <input autocomplete="false" id='word-suggest' type="text" placeholder="Enter a word to complete">
+            <ul id="suggestions-list">
+                <li>Sug1</li>
+                <li>Sug2</li>
+            </ul>
         </div>
 
         <div class="counter-container">
-            <div id="counter" class="counter">5</div>
+            <div id="counter" class="counter">0</div>
             <span>Words in Dictionary</span>
         </div>
     </div>

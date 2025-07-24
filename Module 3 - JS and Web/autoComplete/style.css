@@ -60,3 +60,20 @@ button {
 span {
     font-size: 20px;
 }
+
+#info-row {
+    background-color: #c6f6d4;
+    color: #2e6049;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    display: none;
+    margin-bottom: 1.5rem;
+    border: #2e6049 solid 1px;
+}
+
+#info-row.error {
+    background-color: #fed7d7;
+    color: #7b3334;
+    border: #7b3334 solid 1px;
+}

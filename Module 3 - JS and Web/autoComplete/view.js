@@ -12,7 +12,7 @@ addWordButton.addEventListener('click', e => {
     const newWord = newWordInput.value;
     const output = handleAdd(newWord);
     if (output === true) {
-        displayWordSucces(newWord);
+        displayWordSuccess(newWord);
         wordsCounter++;
     }
     else {
@@ -21,27 +21,53 @@ addWordButton.addEventListener('click', e => {
     updateCounter();
 })
 
-wordSuggestInput.addEventListener('input ', e => {    
+wordSuggestInput.addEventListener('mouseover ', e => {  
+    console.log('change');
+      
     const word = e.target.value;
     const suggestions = handleSuggest(word);
-    if (suggestions !== false) displaySuggestions(suggestions);
+    displaySuggestions(suggestions);
     
 })
 
 
 
 // Utility functions
-function displayWordSucces(word)  {
-    console.log('success: ', word);    
+function displayWordSuccess(word)  {
+    console.log('success on ', word);
+    
+    const infoRow = document.querySelector('#info-row');
+    infoRow.classList.remove('error');
+    infoRow.textContent = `✔ Added ${word} to dictionary`;
+    infoRow.style.display = 'block';
+
+    setTimeout(() => {
+        infoRow.style.display = 'none';
+    }, 2000)
 }
 
 function displayWordError(err) {
     console.log('add word error: ', err);
+
+    const infoRow = document.querySelector('#info-row');
+    infoRow.textContent = `Error: ${err}`;
+    infoRow.style.display = 'block';
+
+    infoRow.classList.add('error');
+
+    setTimeout(() => {
+        infoRow.style.display = 'none';
+        infoRow.classList.remove('error');
+    }, 2000)
     
 }
 
 function displaySuggestions(words) {
-    console.log(words);    
+    console.log(words);        
+}
+
+function refreshSuggestionsList(suggestions) {
+    
 }
 
 function updateCounter() {
