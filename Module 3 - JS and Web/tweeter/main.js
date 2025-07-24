@@ -30,3 +30,8 @@ export function handleDeleteComment(postId, commentId) {
     tweeter.removeComment(postId, commentId);
     renderer.render(tweeter.getPosts());
 }
+
+export function handleAddComment(postId, text) {
+    tweeter.addComment(postId, text);
+    renderer.render(tweeter.getPosts());
+}

@@ -1,4 +1,4 @@
-import { handleDeleteComment, handleDeletePost } from "./main.js";
+import { handleAddComment, handleDeleteComment, handleDeletePost } from "./main.js";
 import Tweeter from "./model.js";
 
 export class Renderer {
@@ -40,6 +40,22 @@ export class Renderer {
             postDiv.appendChild(commentsContaier);
 
             postsDiv.appendChild(postDiv);
+
+            // Add comment
+            const addCommentRow = document.createElement('div');
+            addCommentRow.className = 'add-comment-row';
+            postDiv.appendChild(addCommentRow);
+
+            const addCommentInput = document.createElement('input');
+            addCommentInput.placeholder = 'Write you comment';
+            addCommentInput.className = 'add-comment-input';
+            addCommentRow.appendChild(addCommentInput);
+            
+            const addCommentButton = document.createElement('button');
+            addCommentButton.className = 'add-comment';
+            addCommentButton.innerText = 'Comment';
+            addCommentButton.addEventListener('click', e => handleAddComment(post.id, addCommentInput.value));
+            addCommentRow.appendChild(addCommentButton);
         }
     }
 
