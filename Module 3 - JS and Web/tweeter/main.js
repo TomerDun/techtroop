@@ -23,3 +23,10 @@ function handleAddPost() {
     renderer.render(tweeter.getPosts());
 
 }
+
+export function handleDeleteComment(postId, commentId) {
+    console.log('Deleted comment');
+    
+    tweeter.removeComment(postId, commentId);
+    renderer.render(tweeter.getPosts());
+}

@@ -1,4 +1,4 @@
-import { handleDeletePost } from "./main.js";
+import { handleDeleteComment, handleDeletePost } from "./main.js";
 import Tweeter from "./model.js";
 
 export class Renderer {
@@ -53,6 +53,8 @@ export class Renderer {
             deleteButton.className = 'comment-delete-button';
             deleteButton.innerText = '🔥'
             deleteButton.setAttribute('data-id', comment.id);
+
+            deleteButton.addEventListener('click', e => handleDeleteComment(post.id, comment.id));
             commentRow.appendChild(deleteButton);
 
             // Comment content
