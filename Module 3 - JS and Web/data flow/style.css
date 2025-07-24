@@ -1,0 +1,30 @@
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border: solid silver 2px;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+#posts {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: solid silver 2px;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+}
+
+.post-name {
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+.post:hover {
+    background-color: silver;
+    cursor: pointer;
+}
