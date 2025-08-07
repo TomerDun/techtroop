@@ -1,0 +1,29 @@
+.fresh {
+ background-color: #82ec95;
+}
+
+.calm {
+ background-color: #7dcbf9;
+}
+
+.adventures {
+ background-color: #ffb6c2;
+}
+
+.happy {
+ background-color: #e1a0dc;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}

@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Ex2 from './Ex2'
+import Boxes from './Boxes/Boxes'
 
   let companies = [
     { name: "Tesla", revenue: 140 },
@@ -23,14 +24,15 @@ function App() {
 
   return (
     <>
-    <div className="ex-space">
+    {/* <div className="ex-space">
       <h4 className='ex-title'>Exercise 1</h4>
       <div className="exercise" id="ex-1">
         {companies.map(c => showCompany(c.name, c.revenue))}
       </div>
     </div>
 
-    <Ex2 />
+    <Ex2 /> */}
+    <Boxes />
     </>
   )
 }
