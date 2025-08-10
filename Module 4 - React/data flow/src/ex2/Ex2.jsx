@@ -33,7 +33,14 @@ export default function Ex2() {
     )
     const [displayConversation, setDisplayConversation] = useState(null); 
 
+
+    const contacts = conversations.map(conv => conv.with);
+
+    function displayConvo(contact) {
+        setDisplayConversation(contact);
+    }
+
     return (
-        displayConversation === null ? <List /> : <Conversation />
+        displayConversation === null ? <List displayConvo={displayConvo} contacts={contacts}/> : <Conversation />
     )
 }
