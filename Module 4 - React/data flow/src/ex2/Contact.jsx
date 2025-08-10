@@ -1,5 +1,5 @@
 export default function Contact({contact, displayConvo}) {
     return (
-        <div onClick={() => displayConvo(contact)}>{contact}</div>
+        <button style={{margin: '4px'}}  onClick={() => displayConvo(contact)}>{contact}</button>
     )
 }

@@ -31,16 +31,25 @@ export default function Ex2() {
             }
         ]
     )
-    const [displayConversation, setDisplayConversation] = useState(null); 
+    const [displayConversation, setDisplayConversation] = useState(null);
 
 
     const contacts = conversations.map(conv => conv.with);
+    const contactConvo = displayConversation ? conversations.filter(conv => conv.with === displayConversation)[0].convo : null;
 
     function displayConvo(contact) {
         setDisplayConversation(contact);
     }
 
     return (
-        displayConversation === null ? <List displayConvo={displayConvo} contacts={contacts}/> : <Conversation />
+        <>
+            {displayConversation === null ? <List displayConvo={displayConvo} contacts={contacts} /> :
+                <>
+                    <Conversation convWith={displayConversation} convo={contactConvo} />
+                    <button style={{ marginTop: '1rem' }} onClick={() => setDisplayConversation(null)}>Back</button>
+
+                </>
+            }
+        </>
     )
 }
