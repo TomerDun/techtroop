@@ -4,6 +4,7 @@ import './Ex2.css'
 
 export default function Ex2() {
     const [posts, setPosts] = useState([]);
+    const [smallScreen, setSmallScreen] = useState(false);
 
     async function fetchPosts() {
         const url = 'https://jsonplaceholder.typicode.com/posts';
@@ -14,11 +15,16 @@ export default function Ex2() {
 
     useEffect(() => {
         fetchPosts();
+
+        window.addEventListener('resize', (e) => {
+            setSmallScreen(window.innerWidth <= 700);
+        })
+
     }, [])
 
     return (
         <div className="cards-container">
-            {posts.map((post, i) => <Card post={post} key={i}/>)}
+            {posts.map((post, i) => <Card smallScreen={smallScreen3} post={post} key={i} />)}
         </div>
     )
 }
