@@ -22,4 +22,15 @@ postsRouter.get('/:postId', (req, res) => {
     }
 })
 
+postsRouter.get('/:postId/comments', (req, res) => {
+    const postId = req.params.postId;
+    const posts = getPosts();
+    if (!posts[postId]) {
+        res.status(400).json({error: 'Post not found'});
+    }
+    else {
+        res.status(200).send(posts[postId].comments);
+    }
+})
+
 module.exports = {postsRouter};
