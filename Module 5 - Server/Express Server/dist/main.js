@@ -3,9 +3,14 @@ const baseUrl = 'http://localhost:8080'
 const nameInput = document.getElementById('item-name');
 const getPriceButton = document.getElementById('get-price');
 const priceDisplay = document.getElementById('price-display');
+const moneyDisplay = document.getElementById('money');
+
+function getMoney() {        
+    return Number(moneyDisplay.innerHTML);
+}
 
 async function getPrice(name) {
-    const url = baseUrl + '/priceCheck?name=' + name;
+    const url = baseUrl + '/priceCheck/' + name;
     const res = await fetch(url);
     const data = await res.json();
     return data.price;
@@ -33,6 +38,34 @@ async function buyItem() {
 
 }
 
+async function tryToBuy() {
+    const itemName = document.getElementById('buy-input').value;
+    const itemDisplay = document.getElementById('buy-display');
+    const money = getMoney();
+    console.log(money);
+
+    let itemPrice = await getPrice(itemName);
+    console.log('itemPrice: ', itemPrice);
+    
+    // itemPrice = Number(itemPrice);
+    if (itemPrice > money) {
+        itemDisplay.innerHTML = 'Get a job, you dont have ' + itemPrice;
+    }
+    else {
+        await buyItem();        
+        
+        const newMoney = money - itemPrice        
+        
+        
+        
+        console.log(newMoney);
+        
+        moneyDisplay.innerHTML = newMoney;
+    }
+
+
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
 
@@ -41,5 +74,5 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('LOADED MAIN');
 
     getPriceButton.addEventListener('click', displayPrice);
-    document.getElementById('buy-button').addEventListener('click', buyItem)
+    document.getElementById('buy-button').addEventListener('click', tryToBuy)
 })
