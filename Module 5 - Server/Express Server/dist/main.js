@@ -1,3 +1,5 @@
+var lastPrice = null;
+
 const baseUrl = 'http://localhost:8080'
 
 const nameInput = document.getElementById('item-name');
@@ -5,7 +7,26 @@ const getPriceButton = document.getElementById('get-price');
 const priceDisplay = document.getElementById('price-display');
 const moneyDisplay = document.getElementById('money');
 
-function getMoney() {        
+// Extension 2
+async function priceChecker() {
+    const newPrice = await getPrice('chair');
+    if (lastPrice === null || lastPrice <= newPrice) {
+        console.log('Still waiting for a price drop');
+        
+    }
+    else {
+        const res = await fetch(baseUrl + '/buy/' + 'chair');
+        const data = await res.json();
+        if (data) {
+            console.log('Bought a chair for less');            
+        }
+    }
+    lastPrice = newPrice;
+    console.log('last price: ', lastPrice);
+    
+}
+
+function getMoney() {
     return Number(moneyDisplay.innerHTML);
 }
 
@@ -22,11 +43,11 @@ async function displayPrice() {
 
     const price = await getPrice(nameInput.value);
     console.log(price);
-    
+
     priceDisplay.innerHTML = 'price: ' + price;
 }
 
-async function buyItem() {    
+async function buyItem() {
     const itemName = document.getElementById('buy-input').value;
     const itemDisplay = document.getElementById('buy-display');
 
@@ -46,20 +67,20 @@ async function tryToBuy() {
 
     let itemPrice = await getPrice(itemName);
     console.log('itemPrice: ', itemPrice);
-    
+
     // itemPrice = Number(itemPrice);
     if (itemPrice > money) {
         itemDisplay.innerHTML = 'Get a job, you dont have ' + itemPrice;
     }
     else {
-        await buyItem();        
-        
-        const newMoney = money - itemPrice        
-        
-        
-        
+        await buyItem();
+
+        const newMoney = money - itemPrice
+
+
+
         console.log(newMoney);
-        
+
         moneyDisplay.innerHTML = newMoney;
     }
 
@@ -67,12 +88,11 @@ async function tryToBuy() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-
-
-
-
     console.log('LOADED MAIN');
+
 
     getPriceButton.addEventListener('click', displayPrice);
     document.getElementById('buy-button').addEventListener('click', tryToBuy)
+
+    setInterval(priceChecker, 3000)
 })
