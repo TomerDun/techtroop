@@ -27,6 +27,14 @@ function buyItem(name) {
     return queryItem[0];    
 }
 
+function doSale() {
+    for (const item of store) {
+        if (item.inventory > 10) {
+            item.price /= 2
+        }
+    }
+}
+
 app.listen(port, () => {
     console.log('Server is running on port ', port);
 
@@ -45,6 +53,18 @@ app.listen(port, () => {
             res.status(401).json({'error': 'No item found'});        
         } else {
             res.status(200).json({item});
+        }
+    }) 
+
+    app.get('/sale', (req, res) => {
+        if (req.query.admin) {
+            if (req.query.admin === 'true') {
+                doSale();
+                res.send(store);
+            }
+        }
+        else {
+            res.send('You are not the boss of me, you cant do a sale')
         }
     }) 
 })
