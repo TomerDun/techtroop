@@ -1,6 +1,6 @@
 const express = require('express');
 const {get, logPosts, getPosts} = require('../models/postsModel');
-const { editComment, addPost, deletePost } = require('../controllers/postsController');
+const { editComment, addPost, deletePost, deleteComment } = require('../controllers/postsController');
 
 const postsRouter = express.Router();
 
@@ -30,8 +30,7 @@ postsRouter.delete('/:postId', (req, res) => {
         res.status(204).send('Post Deleted')
     } else {
         res.status(400).send('Could not find post')
-    }
-    
+    } 
 })
 
 postsRouter.get('/:postId/comments', (req, res) => {
@@ -55,6 +54,15 @@ postsRouter.put('/:postId/:commentId', (req, res) => {
     else {
         console.log('--new comment: ', newComment);
         res.status(201).send(newComment);
+    }
+})
+
+postsRouter.delete('/:postId/:commentId', (req, res) => {        
+    if (deleteComment(req.params.postId, req.params.commentId)) {
+        res.status(204).send({'msg': 'Deleted Comment'});
+    }
+    else {
+        res.status(400).send({msg: 'Could not find comment or post'})
     }
 })
 

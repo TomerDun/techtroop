@@ -61,7 +61,6 @@ function addPost(post) {
 }
 
 function deletePost(postId) {
-    // Generate new Id
     const allPosts = getPosts();
     if (postId in allPosts) {
         delete allPosts[postId];
@@ -71,5 +70,27 @@ function deletePost(postId) {
      
 }
 
+function deleteComment(postId, commentId) {    
+    const allPosts = getPosts();
+    let commentIndex = null;
+    if (postId in allPosts) {        
+        
+        // Find Comment
+        for (let i in allPosts[postId].comments) {
+            console.log('--comment ID: ', allPosts[postId].comments[i].id);
+            
+            if (allPosts[postId].comments[i].id == commentId) {
+                commentIndex = i;
+            }
+        }
+        if (commentIndex !== null) {
+            allPosts[postId].comments.splice(commentId, 1);
+            return true;
+        }
+    }
+    return false;
+     
+}
 
-module.exports = { fetchPosts, fetchComments, editComment, addPost, deletePost };
+
+module.exports = { fetchPosts, fetchComments, editComment, addPost, deletePost, deleteComment };
