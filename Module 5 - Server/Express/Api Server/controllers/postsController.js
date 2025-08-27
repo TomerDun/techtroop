@@ -1,5 +1,5 @@
 const { updatePosts, loadComments, getPosts } = require('../models/postsModel.js')
-const { formatPosts } = require('../utils/postUtils.js')
+const { formatPosts, generateNewId } = require('../utils/postUtils.js')
 
 async function fetchPosts() {
     const url = 'https://jsonplaceholder.typicode.com/posts';
@@ -52,4 +52,13 @@ function editComment(postId, commentId, body) {
     return comment;
 }
 
-module.exports = { fetchPosts, fetchComments, editComment };
+function addPost(post) {
+    // Generate new Id
+    const allPosts = getPosts();
+    post.comments = [];
+    const newId = generateNewId(allPosts);
+    allPosts[newId] = post;    
+}
+
+
+module.exports = { fetchPosts, fetchComments, editComment, addPost };

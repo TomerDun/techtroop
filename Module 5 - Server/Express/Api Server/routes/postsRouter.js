@@ -1,15 +1,17 @@
-const expres = require('express');
+const express = require('express');
 const {get, logPosts, getPosts} = require('../models/postsModel');
-const { editComment } = require('../controllers/postsController');
+const { editComment, addPost } = require('../controllers/postsController');
 
-const postsRouter = expres.Router();
+const postsRouter = express.Router();
 
 postsRouter.get('/', (req, res) => {
     const posts = getPosts();
-    res.status(200).send(posts);
-    
-    
-    res.status(200).send(postsObj);
+    res.status(200).send(posts);            
+})
+
+postsRouter.post('/', (req, res) => {
+    addPost(req.body);
+    res.status(201).send({msg: 'Added post'})
 })
 
 postsRouter.get('/:postId', (req, res) => {

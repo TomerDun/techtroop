@@ -10,4 +10,10 @@ function formatPosts(posts) {
    return output;
 }
 
-module.exports = {formatPosts}
+function generateNewId(items) {      
+   const keys = Object.keys(items).map(key => Number(key));            
+   const maxId = Math.max(...keys);            
+   return maxId + 1;
+}
+
+module.exports = {formatPosts, generateNewId}

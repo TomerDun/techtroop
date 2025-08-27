@@ -8,9 +8,10 @@ const PORT = 8080;
 app.use(express.json());
 app.use('/posts', postsRouter);
 
-app.get('/', (req, res) => {
-    res.status(200).send('Server running')
-})
+
+// app.get('/', (req, res) => {
+//     res.status(200).send('Server running')
+// })
 
 
 app.listen(PORT, () => {
