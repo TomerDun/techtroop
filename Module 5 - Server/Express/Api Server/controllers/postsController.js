@@ -64,9 +64,12 @@ function deletePost(postId) {
     // Generate new Id
     const allPosts = getPosts();
     if (postId in allPosts) {
-        
+        delete allPosts[postId];
+        return true;   
     }
+    return false;
+     
 }
 
 
-module.exports = { fetchPosts, fetchComments, editComment, addPost };
+module.exports = { fetchPosts, fetchComments, editComment, addPost, deletePost };
