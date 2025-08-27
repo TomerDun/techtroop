@@ -1,4 +1,4 @@
-const { updatePosts, loadComments } = require('../models/postsModel.js')
+const { updatePosts, loadComments, getPosts } = require('../models/postsModel.js')
 const { formatPosts } = require('../utils/postUtils.js')
 
 async function fetchPosts() {
@@ -25,8 +25,31 @@ async function fetchComments() {
     const data = await res.json();
     loadComments(data);
 
-    
+
     console.log('--fetched and loaded comments');
 }
 
-module.exports = { fetchPosts, fetchComments };
+function editComment(postId, commentId, body) {
+    const post = getPosts()[postId]
+    if (!post) {
+        console.log('could not find post');        
+        return null;
+    }
+    const filteredComments = post.comments.filter(c => c.id == commentId);
+    if (!filteredComments.length) {
+        console.log('could not find comment');
+        return null;
+    }
+    const comment = filteredComments[0];
+            
+
+    if (body.name) {comment.name = body.name};
+    if (body.email) {comment.email = body.email};
+    if (body.body) {comment.body = body.body};
+
+    console.log('--comment:', comment);
+    
+    return comment;
+}
+
+module.exports = { fetchPosts, fetchComments, editComment };
