@@ -60,5 +60,13 @@ function addPost(post) {
     allPosts[newId] = post;    
 }
 
+function deletePost(postId) {
+    // Generate new Id
+    const allPosts = getPosts();
+    if (postId in allPosts) {
+        
+    }
+}
+
 
 module.exports = { fetchPosts, fetchComments, editComment, addPost };
