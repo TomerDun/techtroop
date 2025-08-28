@@ -1,12 +1,14 @@
 import express from 'express';
 import { postsRouter } from './routes/postsRouter.js';
 import { errorHandler } from './middleware/errorHandler.js';
-import { reqLogger } from './middleware/generalFormatter.js';
+import { reqLogger, resFormatter } from './middleware/generalFormatter.js';
 
 const app = express();
 
 app.use(express.json());
 app.use(reqLogger);
+// app.use(resFormatter)
+
 app.use('/posts' ,postsRouter);
 
 app.get('/', (req, res) => {
