@@ -1,13 +1,13 @@
 import Ajv from "ajv";
-import { addFormats } from 'ajv-formats';
-import { postSchema } from "../scehmas/postSchema";
+import addFormats from 'ajv-formats';
+import { postSchema } from "../scehmas/postSchema.js";
 
 const ajv = new Ajv();
 addFormats(ajv);
 const validatePost = ajv.compile(postSchema);
 
 // Middleware
-function postValidation(req, res, next) {
+export function postValidation(req, res, next) {
     const valid = validatePost(req.body);
     if (valid) { next() }
     else {

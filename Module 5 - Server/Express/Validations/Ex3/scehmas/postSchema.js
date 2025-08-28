@@ -7,5 +7,6 @@ export const postSchema = {
             type: "array",
             items: { type: "string" }
         }
-    }
+    },
+    required: ['title', 'content']
 }
