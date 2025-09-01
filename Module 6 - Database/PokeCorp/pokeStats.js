@@ -27,12 +27,23 @@ async function findOwners(name) {
     const query = `SELECT name FROM trainers JOIN pokemon_trainers ON pokemon_id = :pokemonId`;
     [res] = await sequelize.query(query, {replacements: {pokemonId}});
     const names = new Set(res.map(r => r.name));
-    console.log([...names]);
-    
+    console.log([...names]);        
+}
+
+async function findRoster(name) {
+    // get trainer ID
+    let [res] = await sequelize.query('SELECT id FROM trainers WHERE name = :name', {replacements: {name}});
+    const trainerId = res[0].id;
+
+    const sqlQuery = `SELECT name, pokemons.id AS pokeId FROM pokemons JOIN pokemon_trainers ON trainer_id = :trainerId`;
+
+    let [newRes] = await sequelize.query(sqlQuery, {replacements: {trainerId}});
+    console.log(newRes);
     
 }
 
 // await getHeavy();
 // await findByType('grass');
 // await findByType('fire');
-await findOwners('bulbasaur');
+// await findOwners('bulbasaur');
+await findRoster('Ash')
