@@ -56,16 +56,61 @@ async function insertTrainers() {
     
 }
 
+async function insertPokemons() {
+    for (const pokemon of data) {
+        // Get Type ID
+        const [results] = await sequelize.query('SELECT id FROM pokemon_types WHERE name = :typeName', {replacements: {typeName: pokemon.type}});
+        const typeId = results[0].id;
+
+        // Insert pokemon
+        const query = `INSERT INTO pokemons (name, height, weight, type_id) VALUES (:name, :height, :weight, :typeId)`
+        await sequelize.query(query, {replacements: {
+            name: pokemon.name,
+            height: pokemon.height,
+            weight: pokemon.weight,
+            typeId: typeId
+        }})       
+    }
+    console.log('--Finished inserting pokemons');    
+}
+
+// Insert into join table for pokemons and trainers
+async function insertPokemonTrainers() {
+    for (const pokemon of data) {
+        // get pokemon id
+        let trainerId;
+        let [results] = await sequelize.query('SELECT id FROM pokemons WHERE name = :name',
+            {replacements: {name: pokemon.name}}
+        )
+        const pokemonId = results[0].id;
+        
+        for (const trainer of pokemon.ownedBy) {
+            // Get Trainer ID
+            let [results] = await sequelize.query('SELECT id FROM trainers WHERE name = :name',
+                {replacements: {name: trainer.name}}
+            );
+
+            trainerId = results[0].id;   
+            
+            const query  = `INSERT INTO pokemon_trainers (pokemon_id, trainer_id) VALUES (:pokemonId, :trainerId)`
+            await sequelize.query(query, {replacements: {pokemonId, trainerId}});
+        }
+        
+    }
+}
+
 
 
 async function main() {
-    generateSets();
-    // console.log(trainersSet);
+    generateSets();    
     
-    // await insertTypes();
-    // await insertTowns();    
+    await insertTypes();
+    await insertTowns();    
     
     await insertTrainers();
+    await insertPokemons();
+
+    await insertPokemonTrainers();
 
 
 }
