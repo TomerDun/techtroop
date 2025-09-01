@@ -35,10 +35,11 @@ async function findRoster(name) {
     let [res] = await sequelize.query('SELECT id FROM trainers WHERE name = :name', {replacements: {name}});
     const trainerId = res[0].id;
 
-    const sqlQuery = `SELECT name, pokemons.id AS pokeId FROM pokemons JOIN pokemon_trainers ON trainer_id = :trainerId`;
+    const sqlQuery = `SELECT name, pokemons.id AS pokeId FROM pokemons JOIN pokemon_trainers ON trainer_id = :trainerId`;    
 
     let [newRes] = await sequelize.query(sqlQuery, {replacements: {trainerId}});
-    console.log(newRes);
+    const names = new Set(newRes.map(r => r.name));
+    console.log(names);
     
 }
 
