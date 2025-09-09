@@ -30,9 +30,12 @@ router.put('/people/:personId', async (req, res) => {
     console.log('personId: ', id);
     
     const newPerson = await Person.findByIdAndUpdate(id, req.body, {new: true});
-    res.status(201).json(newPerson);
-    
+    res.status(201).json(newPerson);    
+})
 
+router.delete('/people', async (req, res) => {
+    await Person.deleteMany({});
+    res.status(204).send('Deleted');
 })
 
 module.exports = router
