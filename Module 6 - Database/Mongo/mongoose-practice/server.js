@@ -3,13 +3,14 @@ const express = require('express')
 const app = express()
 const api = require('./routes/api.js')
 const mongoose = require('mongoose')
+require('dotenv').config();
 
 
 
 // Mongoose setup
-mongoose.connect("mongodb://127.0.0.1:27017/peopleDB", {
-    useNewUrlParser: true,
-}).catch((err) => console.log(err))
+mongoose.connect(process.env.DB_CONNECTION).catch((err) => console.log(err))
+
+console.log('🤘 DB connected successfully');
 
 app.use('/', api)
 
