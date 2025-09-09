@@ -12,6 +12,7 @@ mongoose.connect(process.env.DB_CONNECTION).catch((err) => console.log(err))
 
 console.log('🤘 DB connected successfully');
 
+app.use(express.json());
 app.use('/', api)
 
 const port = 8080
